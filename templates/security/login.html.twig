@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connectez vous
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+	<div class=" row gy-5">
+		<form method="post">
+			{% if error %}
+				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			{% if app.user %}
+				<div class="mb-3">
+					You are logged in as
+					{{ app.user.userIdentifier }},
+					<a href="{{ path('app_logout') }}">Logout</a>
+				</div>
+			{% endif %}
+
+			<h1 class="h3 mb-3 py-3 text-center font-weight-normal">Connectez vous</h1>
+			<hr width="750px">
+
+			<label for="inputEmail">Email</label>
+			<input type="email" value="{{ last_username }}" placeholder="abc@gmail.com" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+
+			<label for="inputPassword">Mot de passe</label>
+			<input type="password" name="password" id="inputPassword" placeholder="Mot de passe" class="form-control" autocomplete="current-password" required>
+
+			<input
+			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+			{#
+						    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+						        *see https://symfony.com/doc/current/security/remember_me.html
+						
+						        <div class="checkbox mb-3">
+						            <label>
+						                <input type="checkbox" name="_remember_me"> Remember me
+						            </label>
+						        </div>
+						    #}
+			<a href="#">Mot de passe oublié?</a><br>
+			<button class="btn btn-light" type="submit">
+				Connexion
+			</button>
+		</form>
+	</div>
+	</div><br>
+
+	<div class="container ">
+	<div class=" row gy-5">
+		<h6>VOUS AVEZ PAS DE COMPTE ? JE CRÉE MON COMPTE !</h6>
+		<p>
+			Profitez des avantages d'un compte en ligne :<br>
+			Enregistrez votre carnet d'adresse<br>
+			Retrouvez votre historique de commandes et repassez commande en un clic<br>
+			Téléchargez vos factures<br>
+			Suivie de livraison</p>
+		<button class="btn btn-light d-flex justify-content-end" type="submit">
+			S'inscrire
+		</button>
+	</div>
+	</div>
+{% endblock %}

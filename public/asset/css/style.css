@@ -1,0 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Cinzel);
+
+
+.navbar 
+ {
+    font-family: 'Cinzel' !important;
+    list-style: none;
+
+}
+h2 {
+    font-family: 'Cinzel' !important;
+
+}
+button {
+    color:#C49E55;
+    
+}
+header{
+    background: #D5C4B6 !important;
+}
+.menu{
+    font-family: 'Cinzel' !important;
+    color: #D5C4B6!important;
+    
+    list-style: none;
+
+}
+.burger {
+    display:none;
+  }
+  .burger {
+    display:block;
+    position:relative;
+    padding:0;
+    width:45px;
+    height:45px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+  }
+footer{
+    background-color: #D5C4B6;
+
+}
+.container {
+    position: relative;
+}
+.container .text {
+    position: absolute;
+    text-align: start;
+
+}
+
+
+
+
+
+
+
+
+
+

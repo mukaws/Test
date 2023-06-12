@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<h2 style="font-family: 'Cinzel';color: #C49E55 " class="py-3">
+					Inscription</h2>
+				<hr>
+
+				{{ form_start(registrationForm) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+				
+				
+
+
+				<button type="submit" class="btn">Register</button>
+				{{ form_end(registrationForm) }}</div>
+		</div>
+	</div>
+
+
+{% endblock %}
